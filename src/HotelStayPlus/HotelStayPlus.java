@@ -29,5 +29,45 @@ public class HotelStayPlus {
         this.serviciosAdicionales = new ArrayList<>();
 
     }
+    // registrar huesped
+    public boolean registrarHuesped(Huesped huesped) {
+        if (huesped == null && buscarHuespedPorDocumento(huesped.getDocumentoIdentidad()) == null) {
+            huesped.add(huesped);
+            return true;
+        }
+        return false;
+    }
+    // buscar huesped por documento
+    public Huesped buscarHuespedPorDocumento(String documento) {
+        for (Huesped h : huespedes) {
+            if (h.getDocumentoIdentidad().equals(documento)) {
+                return h;
+            }
+        }
+        return null;
+    }
+    public Huesped buscarHuespedPorTelefono(int telefonoBusqueda) {
+        for (Huesped h : huespedes) {
+            if (h.getTelefono() == telefonoBusqueda) {
+                return h;
+            }
+        }
+        return null;
+    }
+    public boolean registrarHabitacion(Habitacion habitacion) {
+        if (habitacion != null && buscarHabitacionPorNumero(habitacion.getNumero()) == null) {
+            habitaciones.add(habitacion);
+            return true;
+        }
+        return false;
+    }
+    public Habitacion buscarHabitacionPorNumero(String numero) {
+        for (Habitacion hab : habitaciones) {
+            if (hab.getNumero().equalsIgnoreCase(numero)) {
+                return hab;
+            }
+        }
+        return null;
+    }
 
 }
