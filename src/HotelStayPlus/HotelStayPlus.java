@@ -1,5 +1,6 @@
 package HotelStayPlus;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -116,6 +117,116 @@ public class HotelStayPlus {
         }
         return sumaDivisores == numero;
     }
+
+    /**
+     * Consulta a un huesped por su telefono y analiza si los digitos de telefono son numero perfecto
+     * @param telefono
+     * @return
+     */
+    public String consultarTelefonoPerfectoHuesped(String telefono) {
+        Huesped h = buscarHuespedPorTelefono(telefono);
+        if (h == null) {
+            return "No se encontró ningún huésped registrado con el teléfono: " + telefono;
+        }
+    }
+        try {
+        double numeroTel = double.parseDouble(soloDigitos);
+        boolean esPerfecto = esNumeroPerfecto(numeroTel);
+        if (esPerfecto) {
+            return "El huésped " + h.getNombreCompleto() + " tiene el teléfono " + h.getTelefono() +
+                    " (valor numérico " + numeroTel + "). ¡SI ES UN NÚMERO PERFECTO!";
+        } else {
+            return "El huésped " + h.getNombreCompleto() + " tiene el teléfono " + h.getTelefono() +
+                    " (valor numérico " + numeroTel + "). NO es un número perfecto.";
+        }
+    } catch (NumberFormatException e) {
+        return "El número de teléfono de " + h.getNombreCompleto() + " (" + soloDigitos + ") es demasiado grande para evaluarlo numéricamente.";
+    }
+
+    /**
+     * recorrer reservas registradas
+     * @param fechaConsulta
+     * @return
+     */
+    public double calcularIngresosPorFechaRealizacion(LocalDate fechaConsulta) {
+        if (fechaConsulta == null) return 0.0;
+        double ingresosAcumulados = 0.0;
+        for (Reserva r : reservas) {
+            // Se toman en cuenta las reservas que no estén canceladas
+            if (r.getFechaRealizacion().equals(fechaConsulta) && r.getEstado() != EstadoReserva.CANCELADA) {
+                ingresosAcumulados += r.getValorTotal();
+            }
+        }
+        return ingresosAcumulados;
+    }
+
+    public String getNombreComercial() {
+        return nombreComercial;
+    }
+
+    public void setNombreComercial(String nombreComercial) {
+        this.nombreComercial = nombreComercial;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getPaginaweb() {
+        return paginaweb;
+    }
+
+    public void setPaginaweb(String paginaweb) {
+        this.paginaweb = paginaweb;
+    }
+
+    public List<Huesped> getHuespedes() {
+        return huespedes;
+    }
+
+    public void setHuespedes(List<Huesped> huespedes) {
+        this.huespedes = huespedes;
+    }
+
+    public List<Habitacion> getHabitaciones() {
+        return habitaciones;
+    }
+
+    public void setHabitaciones(List<Habitacion> habitaciones) {
+        this.habitaciones = habitaciones;
+    }
+
+    public List<Reserva> getReservas() {
+        return reservas;
+    }
+
+    public void setReservas(List<Reserva> reservas) {
+        this.reservas = reservas;
+    }
+
+    public List<ServicioAdicional> getServiciosAdicionales() {
+        return serviciosAdicionales;
+    }
+
+    public void setServiciosAdicionales(List<ServicioAdicional> serviciosAdicionales) {
+        this.serviciosAdicionales = serviciosAdicionales;
+    }
+
+    public NumberFormatException getE() {
+        return e;
+    }
+
+    public void setE(NumberFormatException e) {
+        this.e = e;
+    }
+}
+
+
+
 
 
 

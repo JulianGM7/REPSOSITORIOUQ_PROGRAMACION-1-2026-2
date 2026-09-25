@@ -23,7 +23,7 @@ public class Habitacion {
         EstadoHabitacion = estadoHabitacion;
 
 
-        public boolean estaDisponible () {
+        public boolean estaDisponible() {
             return this.getEstadoHabitacion() == estaDisponible();
 
             public String toString () {
@@ -83,6 +83,4 @@ public class Habitacion {
         }
     }
 
-    private Object getEstadoHabitacion() {
-    }
 }
