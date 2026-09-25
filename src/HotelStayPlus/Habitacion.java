@@ -9,10 +9,10 @@ public class Habitacion {
     private String TipoHabitacion;
     private int capacidadMaxima;
     private double precioPorNoche;
-    private String EstadoHabitacion ;
+    private String EstadoHabitacion;
 
 
-    private List <Reserva> reservas;
+    private List<Reserva> reservas;
 
     public Habitacion(String numero, int piso, String tipoHabitacion, int capacidadMaxima, double precioPorNoche, String estadoHabitacion) {
         this.numero = numero;
@@ -23,18 +23,14 @@ public class Habitacion {
         EstadoHabitacion = estadoHabitacion;
 
 
-}
+    }
 
+    public String toString() {
+        return "Habitacion N° " + numero + " (" + getTipoHabitacion() + ") - Piso: " + piso +
+                " | Cap: " + capacidadMaxima + " | Precio/noche: $" + precioPorNoche +
+                " | Estado: " + getEstadoHabitacion();
+    }
 
-    public boolean estaDisponible() {
-        return this.getEstadoHabitacion() == estaDisponible();
-
-        public String toString () {
-            return "Habitacion N° " + numero + " (" + tipo + ") - Piso: " + piso +
-                    " | Cap: " + capacidadMaxima + " | Precio/noche: $" + precioPorNoche +
-                    " | Estado: " + estado;
-        }
-        }
 
     public String getNumero() {
         return numero;
