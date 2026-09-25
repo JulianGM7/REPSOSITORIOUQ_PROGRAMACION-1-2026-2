@@ -29,6 +29,22 @@ public class HotelStayPlus {
         this.serviciosAdicionales = new ArrayList<>();
 
     }
-
+    // registrar huesped
+    public boolean registrarHuesped(Huesped huesped) {
+        if (huesped == null && buscarHuespedPorDocumento(huesped.getDocumentoIdentidad()) == null) {
+            huesped.add(huesped);
+            return true;
+        }
+        return false;
+    }
+    // buscar huesped por documento
+    public Huesped buscarHuespedPorDocumento(String documento) {
+        for (Huesped h : huespedes) {
+            if (h.getDocumentoIdentidad().equals(documento)) {
+                return h;
+            }
+        }
+        return null;
+    }
 
 }
