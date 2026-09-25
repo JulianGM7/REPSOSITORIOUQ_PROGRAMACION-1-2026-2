@@ -46,7 +46,7 @@ public class Huesped {
         this.nombreCompleto = nombreCompleto;
     }
 
-    public String getDocumentoIdentidad() {
+    public int getDocumentoIdentidad() {
         return documentoIdentidad;
     }
 
