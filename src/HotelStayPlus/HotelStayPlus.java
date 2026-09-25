@@ -29,6 +29,11 @@ public class HotelStayPlus {
         this.serviciosAdicionales = new ArrayList<>();
     }
 
+    /**
+     * Registro Huesped
+     * @param huesped
+     * @return
+     */
     public boolean registrarHuesped(Huesped huesped) {
         if (huesped != null && buscarHuespedPorDocumento(huesped.getDocumentoIdentidad()) == null) {
             huespedes.add(huesped);
@@ -37,6 +42,11 @@ public class HotelStayPlus {
         return false;
     }
 
+    /**
+     * Buscar huesped por ID
+     * @param documento
+     * @return
+     */
     public Huesped buscarHuespedPorDocumento(int documento) {
         for (Huesped h : huespedes) {
             if (h.getDocumentoIdentidad() == documento) {
@@ -46,6 +56,11 @@ public class HotelStayPlus {
         return null;
     }
 
+    /**
+     * Buscar huesped por telefono
+     * @param telefonoBusqueda
+     * @return
+     */
     public Huesped buscarHuespedPorTelefono(int telefonoBusqueda) {
         for (Huesped h : huespedes) {
             if (h.getTelefono() == telefonoBusqueda) {
@@ -55,6 +70,11 @@ public class HotelStayPlus {
         return null;
     }
 
+    /**
+     * Registro habitación
+     * @param habitacion
+     * @return
+     */
     public boolean registrarHabitacion(Habitacion habitacion) {
         if (habitacion != null && buscarHabitacionPorNumero(habitacion.getNumero()) == null) {
             habitaciones.add(habitacion);
@@ -63,6 +83,11 @@ public class HotelStayPlus {
         return false;
     }
 
+    /**
+     * buscar Habitacion por numero
+     * @param numero
+     * @return
+     */
     public Habitacion buscarHabitacionPorNumero(String numero) {
         for (Habitacion hab : habitaciones) {
             if (hab.getNumero().equalsIgnoreCase(numero)) {
@@ -72,6 +97,11 @@ public class HotelStayPlus {
         return null;
     }
 
+    /**
+     * Registro de servicios adicionales
+     * @param servicio
+     * @return
+     */
     public boolean registrarServicioAdicional(ServicioAdicional servicio) {
         if (servicio != null && buscarServicioPorCodigo(servicio.getCodigo()) == null) {
             serviciosAdicionales.add(servicio);
@@ -80,6 +110,11 @@ public class HotelStayPlus {
         return false;
     }
 
+    /**
+     * busqueda de tipo de servicio adicional
+     * @param codigo
+     * @return
+     */
     public ServicioAdicional buscarServicioPorCodigo(int codigo) {
         for (ServicioAdicional s : serviciosAdicionales) {
             if (s.getCodigo() == codigo) {
@@ -89,6 +124,11 @@ public class HotelStayPlus {
         return null;
     }
 
+    /**
+     * Registro reserva
+     * @param reserva
+     * @return
+     */
     public boolean registrarReserva(Reserva reserva) {
         if (reserva != null && buscarReservaPorCodigo(reserva.getCodigoReserva()) == null) {
             reservas.add(reserva);
@@ -97,6 +137,11 @@ public class HotelStayPlus {
         return false;
     }
 
+    /**
+     * busqueda de reserva
+     * @param codigo
+     * @return
+     */
     public Reserva buscarReservaPorCodigo(String codigo) {
         for (Reserva r : reservas) {
             if (r.getCodigoReserva().equalsIgnoreCase(codigo)) {
@@ -141,7 +186,11 @@ public class HotelStayPlus {
         }
     }
 
-    // Calcular ingresos acumulados por fecha
+    /**
+     * Calcular ingresos acumulados por fecha
+     * @param fechaConsulta
+     * @return
+     */
     public double calcularIngresosPorFechaRealizacion(LocalDate fechaConsulta) {
         if (fechaConsulta == null) return 0.0;
         double acumulado = 0.0;
