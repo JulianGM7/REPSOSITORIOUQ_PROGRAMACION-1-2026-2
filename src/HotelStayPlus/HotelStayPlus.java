@@ -61,6 +61,7 @@ public class HotelStayPlus {
         }
         return false;
     }
+
     public Habitacion buscarHabitacionPorNumero(String numero) {
         for (Habitacion hab : habitaciones) {
             if (hab.getNumero().equalsIgnoreCase(numero)) {
@@ -69,5 +70,22 @@ public class HotelStayPlus {
         }
         return null;
     }
+    public boolean registrarServicioAdicional(ServicioAdicional servicioAdicional) {
+        if (servicio != null && buscarServicioPorCodigo(servicioAdicional.getCodigo()) == null) {
+            serviciosAdicionales.add(servicio);
+            return true;
+        }
+        return false;
+    }
+    public ServicioAdicional buscarServicioPorCodigo(String codigo) {
+        for (ServicioAdicional s : serviciosAdicionales) {
+            if (s.getCodigo().equalsIgnoreCase(codigo)) {
+                return s;
+            }
+        }
+        return null;
+    }
+
+
 
 }

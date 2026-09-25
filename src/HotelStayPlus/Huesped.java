@@ -31,6 +31,15 @@ public class Huesped {
         this.huespedes = new ArrayList<>();
         this.reservas = new ArrayList<>();
     }
+    public void agregarReserva(Reserva reserva) {
+        if (!this.reservas.contains(reserva)) {
+            this.reservas.add(reserva);
+        }
+    }
+    public boolean esHuespedFrecuente() {
+        // Se considera huésped frecuente si ha realizado más de 2 reservas
+        return this.reservas.size() > 2;
+    }
 
     public String getNombreCompleto() {
         return nombreCompleto;
