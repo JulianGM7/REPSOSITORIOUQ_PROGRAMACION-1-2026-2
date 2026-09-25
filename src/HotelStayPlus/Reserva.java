@@ -115,29 +115,63 @@ public class Reserva {
     }
 
     // Getters y Setters
-    public String getCodigoReserva() { return codigoReserva; }
-    public void setCodigoReserva(String codigoReserva) { this.codigoReserva = codigoReserva; }
+    public String getCodigoReserva() {
+        return codigoReserva;
+    }
+    public void setCodigoReserva(String codigoReserva) {
+        this.codigoReserva = codigoReserva;
+    }
 
-    public LocalDate getFechaRealizacion() { return fechaRealizacion; }
-    public void setFechaRealizacion(LocalDate fechaRealizacion) { this.fechaRealizacion = fechaRealizacion; }
+    public LocalDate getFechaRealizacion() {
+        return fechaRealizacion;
+    }
+    public void setFechaRealizacion(LocalDate fechaRealizacion) {
+        this.fechaRealizacion = fechaRealizacion;
+    }
 
-    public LocalDate getFechaEntrada() { return fechaEntrada; }
-    public void setFechaEntrada(LocalDate fechaEntrada) { this.fechaEntrada = fechaEntrada; }
+    public LocalDate getFechaEntrada() {
+        return fechaEntrada;
+    }
+    public void setFechaEntrada(LocalDate fechaEntrada) {
+        this.fechaEntrada = fechaEntrada;
+    }
 
-    public LocalDate getFechaSalida() { return fechaSalida; }
-    public void setFechaSalida(LocalDate fechaSalida) { this.fechaSalida = fechaSalida; }
+    public LocalDate getFechaSalida() {
+        return fechaSalida;
+    }
+    public void setFechaSalida(LocalDate fechaSalida) {
+        this.fechaSalida = fechaSalida;
+    }
 
-    public String getEstadoReserva() { return estadoReserva; }
-    public void setEstadoReserva(String estadoReserva) { this.estadoReserva = estadoReserva; }
+    public String getEstadoReserva() {
+        return estadoReserva;
+    }
+    public void setEstadoReserva(String estadoReserva) {
+        this.estadoReserva = estadoReserva;
+    }
 
-    public String getMetodoPago() { return metodoPago; }
-    public void setMetodoPago(String metodoPago) { this.metodoPago = metodoPago; }
+    public String getMetodoPago() {
+        return metodoPago;
+    }
+    public void setMetodoPago(String metodoPago) {
+        this.metodoPago = metodoPago;
+    }
 
-    public double getValorTotal() { recalcularValorTotal(); return valorTotal; }
+    public double getValorTotal() {
+        recalcularValorTotal(); return valorTotal;
+    }
 
-    public Huesped getHuesped() { return huesped; }
-    public void setHuesped(Huesped huesped) { this.huesped = huesped; }
+    public Huesped getHuesped() {
+        return huesped;
+    }
+    public void setHuesped(Huesped huesped) {
+        this.huesped = huesped;
+    }
 
-    public List<Habitacion> getHabitaciones() { return habitaciones; }
-    public List<ServicioAdicional> getServiciosAdicionales() { return serviciosAdicionales; }
+    public List<Habitacion> getHabitaciones() {
+        return habitaciones;
+    }
+    public List<ServicioAdicional> getServiciosAdicionales() {
+        return serviciosAdicionales;
+    }
 }
