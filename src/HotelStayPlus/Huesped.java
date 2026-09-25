@@ -1,6 +1,7 @@
 package HotelStayPlus;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Huesped {
     private String nombreCompleto;
@@ -9,8 +10,7 @@ public class Huesped {
     private String correoElectronico;
     private String paisProcedencia;
 
-    private list <Huesped> huespedes;
-    private list <Reserva> reservas;
+    private List <Reserva> reservas;
 
     /**
      * metodo constructor para la clase huesped
@@ -72,19 +72,19 @@ public class Huesped {
         this.paisProcedencia = paisProcedencia;
     }
 
-    public list<Huesped> getHuespedes() {
+    public List <Huesped> getHuespedes() {
         return huespedes;
     }
 
-    public void setHuespedes(list<Huesped> huespedes) {
+    public void setHuespedes(List<Huesped> huespedes) {
         this.huespedes = huespedes;
     }
 
-    public list<Reserva> getReservas() {
+    public List <Reserva> getReservas() {
         return reservas;
     }
 
-    public void setReservas(list<Reserva> reservas) {
+    public void setReservas(List <Reserva> reservas) {
         this.reservas = reservas;
     }
 }
