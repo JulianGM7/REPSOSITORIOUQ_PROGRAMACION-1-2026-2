@@ -1,6 +1,7 @@
 package HotelStayPlus;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HotelStayPlus {
 
@@ -28,5 +29,6 @@ public class HotelStayPlus {
         this.serviciosAdicionales = new ArrayList<>();
 
     }
+
 
 }
