@@ -144,7 +144,7 @@ public class Reserva {
         }
     }
 
-    // --- Getters y Setters ---
+    //Getters y Setters
 
     public String getCodigoReserva() {
         return codigoReserva;
