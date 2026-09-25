@@ -66,6 +66,10 @@ public class Reserva {
           return false;
     }
 
+    /**
+     * calcula la cantidad de noches de alojamiento
+     * @return
+     */
     public int calcularCantidadNoches() {
         if (fechaEntrada != null && fechaSalida != null) {
             int noches = fechaSalida.getDayOfMonth() - fechaEntrada.getDayOfMonth();
@@ -76,6 +80,37 @@ public class Reserva {
         }
         return 0;
     }
+
+    /**
+     * Recalcula el valor total de la reserva, tiene en cuenta las noches, precio de habitaciones,
+     * ademas tienes en cuenta si es un cliente frecuente para realizar descuento de 10%
+     * @return
+     */
+    public double recalcularValorTotal() {
+        int noches = calcularCantidadNoches();
+        double costoHabitacionesPorNoche = 0.0;
+        for (Habitacion habitacion : habitaciones) {
+            costoHabitacionesPorNoche += habitacion.getPrecioPorNoche();
+
+        }
+        double subtotalHabitaciones = costoHabitacionesPorNoche * noches;
+        double subtotalServicios = 0.0;
+        for (ServicioAdicional servicioAdicional : serviciosAdicionales) {
+            subtotalServicios += servicioAdicional.getPrecio();
+        }
+
+        double total = subtotalHabitaciones + subtotalServicios;
+
+        //Descuento a huesped frecuente (10%)
+        if (huesped != null && huesped.esHuespedFrecuente ()) {
+            total *= 0.90;
+        }
+
+        this.valorTotal = total;
+        return this.valorTotal;
+
+    }
+
 
 
 }
