@@ -7,8 +7,8 @@ public class Habitacion {
      private String fechaEntrada;
      private String fechaSalida;
      private String estadoDisponibilidad;
-      list <Habitacion>habitaciones;
-      list <Reserva> reservas;
+
+     private list <Reserva> reservas;
 
     public Habitacion(int codigo, String fechaEntrada, String fechaSalida, String estadoDisponibilidad) {
         this.codigo = codigo;
