@@ -1,6 +1,7 @@
 package HotelStayPlus;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Habitacion {
     private String numero;
@@ -11,7 +12,7 @@ public class Habitacion {
     private String EstadoHabitacion ;
 
 
-    private List<Reserva> reservas;
+    private List <Reserva> reservas;
 
     public Habitacion(String numero, int piso, String tipoHabitacion, int capacidadMaxima, double precioPorNoche, String estadoHabitacion) {
         this.numero = numero;
