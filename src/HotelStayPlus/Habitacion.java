@@ -23,61 +23,63 @@ public class Habitacion {
         EstadoHabitacion = estadoHabitacion;
 
 
-    }
+        public boolean estaDisponible () {
+            return this.getEstadoHabitacion() == estaDisponible();
 
+            public String toString () {
+                String tipo;
+                return "Habitacion N° " + numero + " (" + tipo + ") - Piso: " + piso +
+                        " | Cap: " + capacidadMaxima + " | Precio/noche: $" + precioPorNoche +
+                        " | Estado: " + estado;
+            }
+        }
 
-    public String toString() {
-        return "Habitacion N° " + numero + " (" + getTipoHabitacion() + ") - Piso: " + piso +
-                " | Cap: " + capacidadMaxima + " | Precio/noche: $" + precioPorNoche +
-                " | Estado: " + getEstadoHabitacion();
-    }
+        public String getNumero () {
+            return numero;
+        }
 
+        public void setNumero (String numero){
+            this.numero = numero;
+        }
 
-    public String getNumero() {
-        return numero;
-    }
+        public int getPiso () {
+            return piso;
+        }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
+        public void setPiso ( int piso){
+            this.piso = piso;
+        }
 
-    public int getPiso() {
-        return piso;
-    }
+        public String getTipoHabitacion () {
+            return TipoHabitacion;
+        }
 
-    public void setPiso(int piso) {
-        this.piso = piso;
-    }
+        public void setTipoHabitacion (String tipoHabitacion){
+            TipoHabitacion = tipoHabitacion;
+        }
 
-    public String getTipoHabitacion() {
-        return TipoHabitacion;
-    }
+        public int getCapacidadMaxima () {
+            return capacidadMaxima;
+        }
 
-    public void setTipoHabitacion(String tipoHabitacion) {
-        TipoHabitacion = tipoHabitacion;
-    }
+        public void setCapacidadMaxima ( int capacidadMaxima){
+            this.capacidadMaxima = capacidadMaxima;
+        }
 
-    public int getCapacidadMaxima() {
-        return capacidadMaxima;
-    }
+        public double getPrecioPorNoche () {
+            return precioPorNoche;
+        }
 
-    public void setCapacidadMaxima(int capacidadMaxima) {
-        this.capacidadMaxima = capacidadMaxima;
-    }
+        public void setPrecioPorNoche ( double precioPorNoche){
+            this.precioPorNoche = precioPorNoche;
+        }
 
-    public double getPrecioPorNoche() {
-        return precioPorNoche;
-    }
+        public String getEstadoHabitacion () {
+            return EstadoHabitacion;
+        }
 
-    public void setPrecioPorNoche(double precioPorNoche) {
-        this.precioPorNoche = precioPorNoche;
-    }
-
-    public String getEstadoHabitacion() {
-        return EstadoHabitacion;
-    }
-
-    public void setEstadoHabitacion(String estadoHabitacion) {
-        EstadoHabitacion = estadoHabitacion;
+        public void setEstadoHabitacion (String estadoHabitacion){
+            EstadoHabitacion = estadoHabitacion;
+        }
     }
 }

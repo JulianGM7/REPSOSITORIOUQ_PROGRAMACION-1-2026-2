@@ -124,10 +124,12 @@ public class Reserva {
     public boolean confirmarReserva() {
         if ("Cancelada".equalsIgnoreCase(this.estadoReserva) || "Finalizada".equalsIgnoreCase(this.estadoReserva)) {
             System.out.println("Error: No se puede confirmar una reserva que está " + this.estadoReserva);
+
             return false;
         }
 
         this.estadoReserva = "Confirmada";
+
         for (Habitacion habitacion : habitaciones) {
             habitacion.setEstadoDisponibilidad("Reservada");
         }
