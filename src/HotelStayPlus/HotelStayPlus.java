@@ -85,6 +85,37 @@ public class HotelStayPlus {
         }
         return null;
     }
+    public boolean registrarReserva(Reserva reserva) {
+        if (reserva != null && buscarReservaPorCodigo(reserva.getCodigoReserva()) == null) {
+            reservas.add(reserva);
+            return true;
+        }
+        return false;
+    }
+    public Reserva buscarReservaPorCodigo(String codigo) {
+        for (Reserva r : reservas) {
+            if (r.getCodigoReserva().equalsIgnoreCase(codigo)) {
+                return r;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Determinar si es un numero perfecto = numero igual a la suma de sus divisores propios excluyendo el mismo número.
+     * @param numero
+     * @return
+     */
+    public static boolean esNumeroPerfecto(double numero){
+        if (numero <= 1) return false;
+        double sumaDivisores = 0;
+        for(double i = 1; i <= numero / 2; i++){
+            if (numero % i ==0){
+                sumaDivisores += i;
+            }
+        }
+        return sumaDivisores == numero;
+    }
 
 
 

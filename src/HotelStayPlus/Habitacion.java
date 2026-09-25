@@ -25,6 +25,7 @@ public class Habitacion {
 
     }
 
+
     public String toString() {
         return "Habitacion N° " + numero + " (" + getTipoHabitacion() + ") - Piso: " + piso +
                 " | Cap: " + capacidadMaxima + " | Precio/noche: $" + precioPorNoche +
