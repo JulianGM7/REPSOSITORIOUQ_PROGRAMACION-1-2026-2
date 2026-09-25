@@ -9,17 +9,7 @@ public class Huesped {
     private int telefono;
     private String correoElectronico;
     private String paisProcedencia;
-
-    private List <Reserva> reservas;
-
-    /**
-     * metodo constructor para la clase huesped
-     * @param nombreCompleto del huesped
-     * @param documentoIdentidad de huesped
-     * @param telefono del huesped
-     * @param correoElectronico del huesped
-     * @param paisProcedencia del huesped
-     */
+    private List<Reserva> reservas;
 
     public Huesped(String nombreCompleto, int documentoIdentidad, int telefono, String correoElectronico, String paisProcedencia) {
         this.nombreCompleto = nombreCompleto;
@@ -29,15 +19,18 @@ public class Huesped {
         this.paisProcedencia = paisProcedencia;
         this.reservas = new ArrayList<>();
     }
+
     public void agregarReserva(Reserva reserva) {
         if (!this.reservas.contains(reserva)) {
             this.reservas.add(reserva);
         }
     }
+
     public boolean esHuespedFrecuente() {
         return this.reservas.size() > 2;
     }
 
+    // Getters y Setters
     public String getNombreCompleto() {
         return nombreCompleto;
     }

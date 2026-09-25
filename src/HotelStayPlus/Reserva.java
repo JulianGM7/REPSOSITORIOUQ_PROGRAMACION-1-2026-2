@@ -28,23 +28,16 @@ public class Reserva {
         this.serviciosAdicionales = new ArrayList<>();
         this.valorTotal = 0.0;
 
-        // Asignar reserva al huésped si existe
         if (huesped != null) {
             huesped.agregarReserva(this);
         }
     }
 
-    /**
-     * Valida y asigna habitación a la reserva.
-     * @param habitacion Habitación a agregar
-     * @return true si se agregó correctamente, false si no está disponible
-     */
     public boolean agregarHabitacion(Habitacion habitacion) {
         if (habitacion == null) return false;
 
-        // Validar que la habitación se encuentre disponible
         if (!habitacion.estaDisponible()) {
-            System.out.println("Error: La habitación no se encuentra disponible.");
+            System.out.println("La habitacion no esta disponible.");
             return false;
         }
 
@@ -56,11 +49,6 @@ public class Reserva {
         return false;
     }
 
-    /**
-     * Agrega un servicio adicional a la reserva.
-     * @param servicioAdicional Servicio a agregar
-     * @return true si se agregó, false en caso contrario
-     */
     public boolean agregarServicioAdicional(ServicioAdicional servicioAdicional) {
         if (servicioAdicional != null && servicioAdicional.isDisponible()) {
             serviciosAdicionales.add(servicioAdicional);
@@ -70,10 +58,6 @@ public class Reserva {
         return false;
     }
 
-    /**
-     * Calcula la cantidad de noches de alojamiento.
-     * @return cantidad de noches de la estadía (mínimo 1)
-     */
     public int calcularCantidadNoches() {
         if (fechaEntrada != null && fechaSalida != null) {
             int noches = fechaSalida.getDayOfMonth() - fechaEntrada.getDayOfMonth();
@@ -85,12 +69,6 @@ public class Reserva {
         return 0;
     }
 
-    /**
-     * Recalcula el valor total de la reserva teniendo en cuenta las noches,
-     * el precio de las habitaciones, los servicios adicionales y un 10% de descuento
-     * si el huésped es cliente frecuente.
-     * @return valor total de la reserva
-     */
     public double recalcularValorTotal() {
         int noches = calcularCantidadNoches();
         double costoHabitacionesPorNoche = 0.0;
@@ -108,7 +86,7 @@ public class Reserva {
 
         double total = subtotalHabitaciones + subtotalServicios;
 
-        // Descuento a huésped frecuente (10%)
+        // Descuento si es cliente frecuente (10%)
         if (huesped != null && huesped.esHuespedFrecuente()) {
             total *= 0.90;
         }
@@ -117,28 +95,18 @@ public class Reserva {
         return this.valorTotal;
     }
 
-    /**
-     * Confirma la reserva y actualiza la disponibilidad de las habitaciones correspondientes.
-     * @return true si se confirmó la reserva
-     */
     public boolean confirmarReserva() {
         if ("Cancelada".equalsIgnoreCase(this.estadoReserva) || "Finalizada".equalsIgnoreCase(this.estadoReserva)) {
-            System.out.println("Error: No se puede confirmar una reserva que está " + this.estadoReserva);
-
             return false;
         }
 
         this.estadoReserva = "Confirmada";
-
         for (Habitacion habitacion : habitaciones) {
             habitacion.setEstadoDisponibilidad("Reservada");
         }
         return true;
     }
 
-    /**
-     * Cancela la reserva y libera las habitaciones correspondientes.
-     */
     public void cancelarReserva() {
         this.estadoReserva = "Cancelada";
         for (Habitacion habitacion : habitaciones) {
@@ -146,82 +114,30 @@ public class Reserva {
         }
     }
 
-    //Getters y Setters
+    // Getters y Setters
+    public String getCodigoReserva() { return codigoReserva; }
+    public void setCodigoReserva(String codigoReserva) { this.codigoReserva = codigoReserva; }
 
-    public String getCodigoReserva() {
-        return codigoReserva;
-    }
+    public LocalDate getFechaRealizacion() { return fechaRealizacion; }
+    public void setFechaRealizacion(LocalDate fechaRealizacion) { this.fechaRealizacion = fechaRealizacion; }
 
-    public void setCodigoReserva(String codigoReserva) {
-        this.codigoReserva = codigoReserva;
-    }
+    public LocalDate getFechaEntrada() { return fechaEntrada; }
+    public void setFechaEntrada(LocalDate fechaEntrada) { this.fechaEntrada = fechaEntrada; }
 
-    public LocalDate getFechaRealizacion() {
-        return fechaRealizacion;
-    }
+    public LocalDate getFechaSalida() { return fechaSalida; }
+    public void setFechaSalida(LocalDate fechaSalida) { this.fechaSalida = fechaSalida; }
 
-    public void setFechaRealizacion(LocalDate fechaRealizacion) {
-        this.fechaRealizacion = fechaRealizacion;
-    }
+    public String getEstadoReserva() { return estadoReserva; }
+    public void setEstadoReserva(String estadoReserva) { this.estadoReserva = estadoReserva; }
 
-    public LocalDate getFechaEntrada() {
-        return fechaEntrada;
-    }
+    public String getMetodoPago() { return metodoPago; }
+    public void setMetodoPago(String metodoPago) { this.metodoPago = metodoPago; }
 
-    public void setFechaEntrada(LocalDate fechaEntrada) {
-        this.fechaEntrada = fechaEntrada;
-    }
+    public double getValorTotal() { recalcularValorTotal(); return valorTotal; }
 
-    public LocalDate getFechaSalida() {
-        return fechaSalida;
-    }
+    public Huesped getHuesped() { return huesped; }
+    public void setHuesped(Huesped huesped) { this.huesped = huesped; }
 
-    public void setFechaSalida(LocalDate fechaSalida) {
-        this.fechaSalida = fechaSalida;
-    }
-
-    public String getEstadoReserva() {
-        return estadoReserva;
-    }
-
-    public void setEstadoReserva(String estadoReserva) {
-        this.estadoReserva = estadoReserva;
-    }
-
-    public String getMetodoPago() {
-        return metodoPago;
-    }
-
-    public void setMetodoPago(String metodoPago) {
-        this.metodoPago = metodoPago;
-    }
-
-    public double getValorTotal() {
-        recalcularValorTotal();
-        return valorTotal;
-    }
-
-    public Huesped getHuesped() {
-        return huesped;
-    }
-
-    public void setHuesped(Huesped huesped) {
-        this.huesped = huesped;
-    }
-
-    public List<Habitacion> getHabitaciones() {
-        return habitaciones;
-    }
-
-    public List<ServicioAdicional> getServiciosAdicionales() {
-        return serviciosAdicionales;
-    }
-
-    @Override
-    public String toString() {
-        return "Reserva [" + codigoReserva + "] | Realizada: " + fechaRealizacion +
-               " | Entrada: " + fechaEntrada + " | Salida: " + fechaSalida +
-               " (" + calcularCantidadNoches() + " noches) | Estado: " + estadoReserva +
-               " | Total: $" + String.format("%.2f", getValorTotal());
-    }
+    public List<Habitacion> getHabitaciones() { return habitaciones; }
+    public List<ServicioAdicional> getServiciosAdicionales() { return serviciosAdicionales; }
 }

@@ -1,28 +1,25 @@
 package HotelStayPlus;
 
-import java.util.ArrayList;
-
 public class ServicioAdicional {
     private int codigo;
     private String nombre;
     private String descripcion;
     private double precio;
-    private String disponibilidad;
+    private boolean disponible;
 
-
-    list <ServicioAdicional> serviosAdiccionales;
-
-    public ServicioAdicional(int codigo, String nombre, String descripcion, double precio, String disponibilidad) {
+    public ServicioAdicional(int codigo, String nombre, String descripcion, double precio, boolean disponible) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
-        this.disponibilidad = disponibilidad;
-
-        this.serviosAdiccionales = new ArrayList<>();
-
+        this.disponible = disponible;
     }
 
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    // Getters y Setters
     public int getCodigo() {
         return codigo;
     }
@@ -55,19 +52,7 @@ public class ServicioAdicional {
         this.precio = precio;
     }
 
-    public String getDisponibilidad() {
-        return disponibilidad;
-    }
-
-    public void setDisponibilidad(String disponibilidad) {
-        this.disponibilidad = disponibilidad;
-    }
-
-    public list<ServicioAdicional> getServiosAdiccionales() {
-        return serviosAdiccionales;
-    }
-
-    public void setServiosAdiccionales(list<ServicioAdicional> serviosAdiccionales) {
-        this.serviosAdiccionales = serviosAdiccionales;
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
     }
 }
