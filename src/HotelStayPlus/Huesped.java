@@ -27,9 +27,15 @@ public class Huesped {
         this.telefono = telefono;
         this.correoElectronico = correoElectronico;
         this.paisProcedencia = paisProcedencia;
-
-        this.huespedes = new ArrayList<>();
         this.reservas = new ArrayList<>();
+    }
+    public void agregarReserva(Reserva reserva) {
+        if (!this.reservas.contains(reserva)) {
+            this.reservas.add(reserva);
+        }
+    }
+    public boolean esHuespedFrecuente() {
+        return this.reservas.size() > 2;
     }
 
     public String getNombreCompleto() {
@@ -40,7 +46,7 @@ public class Huesped {
         this.nombreCompleto = nombreCompleto;
     }
 
-    public String getDocumentoIdentidad() {
+    public int getDocumentoIdentidad() {
         return documentoIdentidad;
     }
 
@@ -72,19 +78,11 @@ public class Huesped {
         this.paisProcedencia = paisProcedencia;
     }
 
-    public List <Huesped> getHuespedes() {
-        return huespedes;
-    }
-
-    public void setHuespedes(List<Huesped> huespedes) {
-        this.huespedes = huespedes;
-    }
-
-    public List <Reserva> getReservas() {
+    public List<Reserva> getReservas() {
         return reservas;
     }
 
-    public void setReservas(List <Reserva> reservas) {
+    public void setReservas(List<Reserva> reservas) {
         this.reservas = reservas;
     }
 }
