@@ -33,27 +33,27 @@ public class Main {
 
                 case 1:
                     JOptionPane.showMessageDialog(null,
-                            "Seleccionaste Agregar número");
+                            "Usted ha sido registrado exitosamente");
                     break;
 
                 case 2:
                     JOptionPane.showMessageDialog(null,
-                            "Seleccionaste Mostrar cantidad");
+                            "su habitacion ha sido registrada exitosamente");
                     break;
 
                 case 3:
                     JOptionPane.showMessageDialog(null,
-                            "Seleccionaste Calcular suma");
+                            "su sericio ha sido registrado exitosamente");
                     break;
 
                 case 4:
                     JOptionPane.showMessageDialog(null,
-                            "Seleccionaste Calcular promedio");
+                            "su reserva ha sido registrada exitosamente");
                     break;
 
                 case 5:
                     JOptionPane.showMessageDialog(null,
-                            "Seleccionaste Calcur promedio");
+                            "Su confirmacion de su reserva ha sido exitosa ");
                     break;
                 case 6:
                     JOptionPane.showMessageDialog(null,
@@ -61,17 +61,17 @@ public class Main {
                     break;
 
                 case 7:JOptionPane.showMessageDialog(null,
-                        "Seleccionaste Calcular promedio");
+                        "El numero total de ingresos a la fecha es de ");
                     break;
                 case 8:
                     JOptionPane.showMessageDialog(null,
-                            "Seleccionaste Calcular promedio");
+                            "la infromacion general del huesped es ");
                     break;
 
 
                 case 0:
                     JOptionPane.showMessageDialog(null,
-                            "Saliendo del programa...");
+                            "te damos las gracias por acogerte ");
                     break;
 
                 default:
@@ -84,5 +84,5 @@ public class Main {
 }
 
 
-}
+
 
