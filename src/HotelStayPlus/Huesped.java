@@ -10,7 +10,6 @@ public class Huesped {
     private String correoElectronico;
     private String paisProcedencia;
 
-    private List <Huesped> huespedes;
     private List <Reserva> reservas;
 
     /**
