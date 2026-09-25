@@ -11,7 +11,7 @@ public class Habitacion {
     private String EstadoHabitacion ;
 
 
-    private list<Reserva> reservas;
+    private List<Reserva> reservas;
 
     public Habitacion(String numero, int piso, String tipoHabitacion, int capacidadMaxima, double precioPorNoche, String estadoHabitacion) {
         this.numero = numero;
