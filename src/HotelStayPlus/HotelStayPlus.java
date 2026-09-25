@@ -106,7 +106,11 @@ public class HotelStayPlus {
         return null;
     }
 
-    // Metodo para verificar si un numero es perfecto (suma de divisores propios)
+    /**
+     * // Metodo para verificar si un numero es perfecto (suma de divisores propios)
+     * @param numero
+     * @return
+     */
     public boolean esNumeroPerfecto(long numero) {
         if (numero <= 1) return false;
         long suma = 0;
@@ -118,7 +122,11 @@ public class HotelStayPlus {
         return suma == numero;
     }
 
-    // Consulta de telefono perfecto
+    /**
+     * Consulta de telefono perfecto
+     * @param telefono
+     * @return
+     */
     public String consultarTelefonoPerfectoHuesped(int telefono) {
         Huesped h = buscarHuespedPorTelefono(telefono);
         if (h == null) {

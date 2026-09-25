@@ -95,6 +95,10 @@ public class Reserva {
         return this.valorTotal;
     }
 
+    /**
+     * confirmar reserva
+     * @return
+     */
     public boolean confirmarReserva() {
         if ("Cancelada".equalsIgnoreCase(this.estadoReserva) || "Finalizada".equalsIgnoreCase(this.estadoReserva)) {
             return false;
@@ -107,6 +111,9 @@ public class Reserva {
         return true;
     }
 
+    /**
+     * cancelar reserva
+     */
     public void cancelarReserva() {
         this.estadoReserva = "Cancelada";
         for (Habitacion habitacion : habitaciones) {

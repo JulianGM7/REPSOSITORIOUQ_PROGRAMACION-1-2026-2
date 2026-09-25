@@ -17,6 +17,10 @@ public class Habitacion {
         this.estadoDisponibilidad = "Disponible";
     }
 
+    /**
+     * estado de habitación
+     * @return
+     */
     public boolean estaDisponible() {
         return "Disponible".equalsIgnoreCase(this.estadoDisponibilidad);
     }
