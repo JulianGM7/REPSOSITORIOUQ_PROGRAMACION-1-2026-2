@@ -46,5 +46,28 @@ public class HotelStayPlus {
         }
         return null;
     }
+    public Huesped buscarHuespedPorTelefono(int telefonoBusqueda) {
+        for (Huesped h : huespedes) {
+            if (h.getTelefono() == telefonoBusqueda) {
+                return h;
+            }
+        }
+        return null;
+    }
+    public boolean registrarHabitacion(Habitacion habitacion) {
+        if (habitacion != null && buscarHabitacionPorNumero(habitacion.getNumero()) == null) {
+            habitaciones.add(habitacion);
+            return true;
+        }
+        return false;
+    }
+    public Habitacion buscarHabitacionPorNumero(String numero) {
+        for (Habitacion hab : habitaciones) {
+            if (hab.getNumero().equalsIgnoreCase(numero)) {
+                return hab;
+            }
+        }
+        return null;
+    }
 
 }
