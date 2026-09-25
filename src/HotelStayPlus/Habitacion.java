@@ -82,4 +82,7 @@ public class Habitacion {
             EstadoHabitacion = estadoHabitacion;
         }
     }
+
+    private Object getEstadoHabitacion() {
+    }
 }
