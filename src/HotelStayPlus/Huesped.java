@@ -20,6 +20,10 @@ public class Huesped {
         this.reservas = new ArrayList<>();
     }
 
+    /**
+     * agendar reserva, huesped frecuente
+     * @param reserva
+     */
     public void agregarReserva(Reserva reserva) {
         if (!this.reservas.contains(reserva)) {
             this.reservas.add(reserva);
